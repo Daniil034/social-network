@@ -8,6 +8,19 @@ export function buildLoaders({isDev}: BuildOptions) {
         exclude: /node_modules/,
     };
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+    };
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "file-loader",
+        options: {
+            name: "[path][name].[ext]",
+        },
+    };
+
     const scssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -28,7 +41,23 @@ export function buildLoaders({isDev}: BuildOptions) {
         ],
     };
 
+    const babelLoader = {
+        test: /\.(?:js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: [
+                    ["@babel/preset-env", {targets: "defaults"}],
+                ],
+            },
+        },
+    };
+
     return [
+        svgLoader,
+        fileLoader,
+        babelLoader,
         typeScriptLoader,
         scssLoader,
     ];
