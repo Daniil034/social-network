@@ -1,3 +1,5 @@
 {
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Loading error": "Something went wrong. Please, reload the page",
+  "Reload error button": "Reload"
 }
