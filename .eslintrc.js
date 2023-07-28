@@ -2,12 +2,14 @@ module.exports = {
     extends: [
         'airbnb',
         'airbnb/hooks',
+        'plugin:i18next/recommended',
     ],
     env: {
         browser: true,
         node: true,
     },
     parser: '@typescript-eslint/parser',
+    plugins: ['i18next'],
     rules: {
         'import/prefer-default-export': ['off'],
         'react/react-in-jsx-scope': 'off',
