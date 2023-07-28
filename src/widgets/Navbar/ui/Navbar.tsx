@@ -1,12 +1,12 @@
-import {classNames} from "shared/lib/classNames/classNames";
-import styles from "./Navbar.module.scss";
-import {AppLink} from "shared/ui/AppLink";
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink } from 'shared/ui/AppLink';
+import styles from './Navbar.module.scss';
 
 type Props = {
     className?: string
 };
 
-export function Navbar({className}: Props) {
+export function Navbar({ className }: Props) {
     return (
         <div className={classNames(styles.navbar, {}, [className])}>
             <div className={styles.links}>
@@ -15,4 +15,4 @@ export function Navbar({className}: Props) {
             </div>
         </div>
     );
-};
+}

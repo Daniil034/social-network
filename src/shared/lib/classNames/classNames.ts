@@ -8,5 +8,5 @@ export function classNames(className: string, mods: Mods = {}, additional: strin
             .filter(([_, boolFlag]) => Boolean(boolFlag))
             .map(([className]) => className),
     ]
-        .join(" ");
+        .join(' ');
 }

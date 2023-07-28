@@ -1,2 +1,2 @@
-export {ThemeProvider} from "./ui/ThemeProvider";
-export {useTheme} from "../../../features/ThemeSwitcher/lib/useTheme";
+export { ThemeProvider } from './ui/ThemeProvider';
+export { useTheme } from '../../../features/ThemeSwitcher/lib/useTheme';
