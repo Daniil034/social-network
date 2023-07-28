@@ -1,5 +1,9 @@
 import { PropsWithChildren, useMemo, useState } from 'react';
-import { localStorageThemeKey, ThemeContext, ThemeVariants } from 'features/ThemeSwitcher/lib/ThemeContext';
+import {
+    localStorageThemeKey,
+    ThemeContext,
+    ThemeVariants,
+} from 'features/ThemeSwitcher/lib/ThemeContext';
 
 export function ThemeProvider({ children }: PropsWithChildren) {
     const defaultTheme = localStorage.getItem(localStorageThemeKey) as ThemeVariants || 'light';

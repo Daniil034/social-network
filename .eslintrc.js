@@ -7,6 +7,7 @@ module.exports = {
     env: {
         browser: true,
         node: true,
+        jest: true,
     },
     parser: '@typescript-eslint/parser',
     plugins: ['i18next'],
@@ -25,6 +26,7 @@ module.exports = {
         'no-shadow': 'off',
         'no-unused-vars': 'warn',
         'no-underscore-dangle': 'off',
+        'max-len': [2, { ignoreComments: true, code: 100 }],
     },
     globals: {
         __IS_DEV__: true,
