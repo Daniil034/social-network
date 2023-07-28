@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { Button } from 'shared/ui/Button/Button';
 
 export function LanguageSwitcher() {
     const { t, i18n } = useTranslation('sidebar');

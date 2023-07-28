@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import ThemeDarkIcon from 'shared/assets/icons/theme-dark.svg';
 import LightThemeIcon from 'shared/assets/icons/theme-light.svg';
-import { Button } from 'shared/ui/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { useTheme } from '../lib/useTheme';
 
 type Props = {
