@@ -1,4 +1,3 @@
-import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildLoaders } from './buildLoaders';
 import { buildResolvers } from './buildResolvers';
@@ -6,7 +5,7 @@ import { buildPlugins } from './buildPlugins';
 import { buildDevServer } from './buildDevServer';
 import { buildMinimizers } from './buildMinimizers';
 
-export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
+export function buildWebpackConfig(options: BuildOptions) {
     const { paths, mode, isDev } = options;
 
     return {

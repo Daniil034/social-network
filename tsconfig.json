@@ -9,7 +9,9 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ES2016",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
@@ -26,5 +28,12 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "config",
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

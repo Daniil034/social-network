@@ -22,8 +22,13 @@ export function Sidebar(props: Props) {
     return (
         <div
             className={classNames(styles.Sidebar, { [styles.collapsed]: isCollapsed }, [className])}
+            data-testid="sidebar-test"
         >
-            <button type="button" onClick={handleCollapseSidebar}>
+            <button
+                data-testid="sidebar-test-toggle"
+                type="button"
+                onClick={handleCollapseSidebar}
+            >
                 {t('toggle sidebar button')}
             </button>
             <div className={classNames(styles.switchers)}>

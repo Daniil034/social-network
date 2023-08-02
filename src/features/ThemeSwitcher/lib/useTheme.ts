@@ -7,7 +7,14 @@ type UseThemeResult = {
 }
 
 export function useTheme(): UseThemeResult {
-    const { theme, setTheme } = useContext(ThemeContext);
+    const themeContext = useContext(ThemeContext);
+    if (!themeContext) {
+        throw new Error(
+            'useTheme has to be used within <ThemeContext.Provider>',
+        );
+    }
+
+    const { theme, setTheme } = themeContext;
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';

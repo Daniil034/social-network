@@ -1,13 +1,14 @@
-import { ComponentProps, PropsWithChildren } from 'react';
+import { ComponentProps, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
 type ButtonVariants = 'clear'
 
-type ButtonProps = PropsWithChildren<{
+type ButtonProps = {
     className?: string,
-    variant?: ButtonVariants
-} & ComponentProps<'button'>>;
+    variant?: ButtonVariants,
+    children: ReactNode
+} & ComponentProps<'button'>;
 
 export function Button(props: ButtonProps) {
     const {
@@ -15,6 +16,7 @@ export function Button(props: ButtonProps) {
     } = props;
     return (
         <button
+            data-testid="button-test"
             type="button"
             className={classNames(styles.Button, {}, [className, styles[variant]])}
             {...restProps}
