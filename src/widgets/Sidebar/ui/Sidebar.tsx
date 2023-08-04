@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { LanguageSwitcher } from 'features/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import { Button } from 'shared/ui/Button/Button';
 import styles from './Sidebar.module.scss';
 
 type Props = {
@@ -24,6 +25,7 @@ export function Sidebar(props: Props) {
             className={classNames(styles.Sidebar, { [styles.collapsed]: isCollapsed }, [className])}
             data-testid="sidebar-test"
         >
+            <Button>TEST</Button>
             <button
                 data-testid="sidebar-test-toggle"
                 type="button"

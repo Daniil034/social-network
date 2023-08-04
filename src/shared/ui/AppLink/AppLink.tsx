@@ -1,13 +1,15 @@
-import { ComponentProps, PropsWithChildren } from 'react';
+import { ComponentProps, PropsWithChildren, ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './AppLink.module.scss';
 
 type AppLinkTheme = 'primary' | 'secondary';
 
-type Props = PropsWithChildren<{
-    className?: string, theme?: AppLinkTheme
-} & ComponentProps<typeof Link>>;
+type Props = {
+    className?: string,
+    theme?: AppLinkTheme,
+    children: ReactNode
+} & ComponentProps<typeof Link>;
 
 export function AppLink(props: Props) {
     const {
