@@ -11,7 +11,7 @@ module.exports = {
         jest: true,
     },
     parser: '@typescript-eslint/parser',
-    plugins: ['i18next'],
+    plugins: ['i18next', 'react-hooks'],
     rules: {
         'import/prefer-default-export': ['off'],
         'react/react-in-jsx-scope': 'off',
@@ -36,6 +36,8 @@ module.exports = {
             ignorePattern: '^import\\s.+\\sfrom\\s.+;$',
         }],
         'import/no-import-module-exports': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,

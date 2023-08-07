@@ -29,6 +29,13 @@ export const Clear: Story = {
     },
 };
 
+export const ClearInverted: Story = {
+    args: {
+        variant: 'clearInverted',
+        children: 'Clear inverted button',
+    },
+};
+
 export const Normal: Story = {
     args: {
         children: 'Normal button',

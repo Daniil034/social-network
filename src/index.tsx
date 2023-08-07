@@ -3,6 +3,7 @@ import { App } from 'app/App';
 import { ThemeProvider } from 'app/providers/ThemeProvider/ui/ThemeProvider';
 import { ErrorBoundary } from 'shared/ui/ErrorBoundary/ErrorBoundary';
 import { PageError } from 'widgets/PageError/PageError';
+import 'app/styles/index.scss';
 
 const root = createRoot(document.getElementById('root')!);
 root.render(

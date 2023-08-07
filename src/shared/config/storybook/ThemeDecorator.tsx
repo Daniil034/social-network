@@ -10,13 +10,19 @@ import { withThemeProvider } from 'shared/lib/providers/withThemeProvider/withTh
 export function ThemeDecorator(Story: StoryFn) {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [theme, setTheme] = useState<ThemeVariants>('light');
+
+    const handleThemeChange = (event: any) => {
+        setTheme(event.detail.theme);
+    };
+
     useEffect(() => {
         document.addEventListener(
             'storybookcssvariables:theme:change',
-            (event: any) => {
-                setTheme(event.detail.theme);
-            },
+            handleThemeChange,
         );
+        return () => {
+            document.removeEventListener('storybookcssvariables:theme:change', handleThemeChange);
+        };
     }, [theme]);
     return (
         <div className={`App ${theme}`} style={{ minHeight: 'unset' }}>

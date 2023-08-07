@@ -2,7 +2,7 @@ import { ComponentProps, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
-type ButtonVariants = 'clear' | 'normal' | 'outlined'
+type ButtonVariants = 'clear' | 'clearInverted' | 'normal' | 'outlined'
 
 type ButtonProps = {
     className?: string,
