@@ -23,7 +23,6 @@ module.exports = {
         'react/jsx-indent-props': [2, 4],
         'import/no-unresolved': 'off',
         'import/extensions': 'off',
-        'react/require-default-props': 'warn',
         'import/no-extraneous-dependencies': 'warn',
         'react/jsx-props-no-spreading': 'warn',
         'no-shadow': 'off',
@@ -38,6 +37,8 @@ module.exports = {
         'import/no-import-module-exports': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'react/require-default-props': 'off',
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,

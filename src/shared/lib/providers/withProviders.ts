@@ -1,11 +1,15 @@
 import { ReactNode } from 'react';
 import { reduceFunctions } from 'shared/lib/reduceFunctions/reduceFunctions';
-import { withTranslation } from 'shared/lib/providers/withTranslation/withTranslation';
-import { withThemeProvider } from 'shared/lib/providers/withThemeProvider/withThemeProvider';
-import { withRouter } from 'shared/lib/providers/withRouter/withRouter';
+import { DeepPartial } from '@reduxjs/toolkit';
+import { StateSchema } from 'app/providers/StoreProvider';
+import { withTranslation } from './withTranslation/withTranslation';
+import { withThemeProvider } from './withThemeProvider/withThemeProvider';
+import { withRouter } from './withRouter/withRouter';
+import { withStore } from './withStore/withStore';
 
-export function withProviders(component: ReactNode) {
+export function withProviders(component: ReactNode, initialState?: DeepPartial<StateSchema>) {
     return reduceFunctions(
+        withStore(initialState),
         withThemeProvider,
         withRouter,
         withTranslation,
