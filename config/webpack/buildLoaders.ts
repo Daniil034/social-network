@@ -12,7 +12,7 @@ export function buildLoaders({ isDev }: BuildOptions) {
     const svgLoader = buildSVGLoader();
 
     const fileLoader = {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|)$/i,
         loader: 'file-loader',
         options: {
             name: '[path][name].[ext]',
@@ -34,11 +34,17 @@ export function buildLoaders({ isDev }: BuildOptions) {
         },
     };
 
+    const fontLoader = {
+        test: /\.(eot|ttf|woff|woff2)$/i,
+        use: 'file-loader',
+    };
+
     return [
         svgLoader,
         fileLoader,
         babelLoader,
         typeScriptLoader,
         scssLoader,
+        fontLoader,
     ];
 }

@@ -1,5 +1,8 @@
 {
   "Page not found": "Страница не найдена",
   "Loading error": "Что-то пошло не так. Пожалуйста, обновите страницу",
-  "Reload error button": "Обновить"
+  "Reload error button": "Обновить",
+  "Login": "Login",
+  "Type your username": "Пользователь",
+  "Type your password": "Пароль"
 }

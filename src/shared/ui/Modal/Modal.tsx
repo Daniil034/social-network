@@ -10,16 +10,28 @@ type Props = {
     children: ReactNode,
     isOpen: boolean,
     onClose: () => void,
+    lazy?: boolean,
 };
 
 const TIMEOUT_DELAY = 100;
 
 export function Modal(props: Props) {
     const {
-        className, children, isOpen, onClose,
+        className,
+        children,
+        isOpen,
+        onClose,
+        lazy = true,
     } = props;
     const [isClosing, setIsClosing] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     const handleContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -52,9 +64,13 @@ export function Modal(props: Props) {
         [styles.isClosing]: isClosing,
     };
 
+    if (lazy && !isMounted) {
+        return null;
+    }
+
     return (
         <Portal>
-            <div className={classNames(styles.Modal, classes, [className])}>
+            <div className={classNames(styles.Modal, classes, [className, 'appModal'])}>
                 <div className={styles.overlay} onClick={handleCloseClick}>
                     <div className={styles.content} onClick={handleContentClick}>
                         {children}

@@ -17,6 +17,7 @@ export function buildScssLoader(isDev: boolean) {
 
                 },
             },
+            'resolve-url-loader',
             'sass-loader',
         ],
     };

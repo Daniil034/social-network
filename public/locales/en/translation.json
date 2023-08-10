@@ -1,5 +1,8 @@
 {
   "Page not found": "Page not found",
   "Loading error": "Something went wrong. Please, reload the page",
-  "Reload error button": "Reload"
+  "Reload error button": "Reload",
+  "Login": "Login",
+  "Type your username": "Username",
+  "Type your password": "Password"
 }
