@@ -16,11 +16,14 @@ export function Counter() {
 
     return (
         <div>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <h1 data-testid="counter-value-test">
                 value =
                 {counterValue}
             </h1>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid="counter-increment-test" onClick={increment}>increment</Button>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid="counter-decrement-test" onClick={decrement}>decrement</Button>
         </div>
     );

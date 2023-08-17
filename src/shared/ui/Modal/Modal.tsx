@@ -71,7 +71,10 @@ export function Modal(props: Props) {
     return (
         <Portal>
             <div className={classNames(styles.Modal, classes, [className, 'appModal'])}>
-                <div className={styles.overlay} onClick={handleCloseClick}>
+                <div
+                    className={styles.overlay}
+                    onClick={handleCloseClick}
+                >
                     <div className={styles.content} onClick={handleContentClick}>
                         {children}
                     </div>

@@ -1,13 +1,13 @@
 import type { Preview } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-// @ts-ignore
 import cssVariablesTheme from '@etchteam/storybook-addon-css-variables-theme';
-// @ts-ignore
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator';
 import { TranslationDecorator } from 'shared/config/storybook/TranslationDecorator';
 // @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
 import lightTheme from '!!style-loader?injectType=lazyStyleTag!css-loader!../../src/app/styles/themes/light.scss';
 // @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
 import darkTheme from '!!style-loader?injectType=lazyStyleTag!css-loader!../../src/app/styles/themes/dark.scss';
 
 const preview: Preview = {

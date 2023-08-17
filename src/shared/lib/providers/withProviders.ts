@@ -7,7 +7,10 @@ import { withThemeProvider } from './withThemeProvider/withThemeProvider';
 import { withRouter } from './withRouter/withRouter';
 import { withStore } from './withStore/withStore';
 
-export function withProviders(component: ReactNode, initialState?: DeepPartial<StateSchema>) {
+export function withProviders(
+    component: ReactNode,
+    initialState?: DeepPartial<StateSchema>,
+): ReactNode {
     return reduceFunctions(
         withStore(initialState),
         withThemeProvider,

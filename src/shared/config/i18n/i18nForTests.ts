@@ -12,7 +12,7 @@ i18n
             escapeValue: false, // not needed for react!!
         },
 
-        // resources: { ru: { translation: { 'Reload error button': 'ASDASD' } } },
+        resources: { ru: {}, en: {} },
     });
 
 export default i18n;
