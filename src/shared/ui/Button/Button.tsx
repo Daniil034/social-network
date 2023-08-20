@@ -7,18 +7,29 @@ type ButtonVariants = 'clear' | 'clearInverted' | 'normal' | 'outlined'
 type ButtonProps = {
     className?: string,
     variant?: ButtonVariants,
+    // disabled?: boolean,
     children: ReactNode
 } & ComponentProps<'button'>;
 
 export function Button(props: ButtonProps) {
     const {
-        children, className, variant = 'normal', ...restProps
+        children,
+        className,
+        variant = 'normal',
+        disabled,
+        ...restProps
     } = props;
+
+    const mods: Record<string, boolean | undefined> = {
+        [styles.disabled]: disabled,
+    };
+
     return (
         <button
             data-testid="button-test"
             type="button"
-            className={classNames(styles.Button, {}, [className, styles[variant]])}
+            className={classNames(styles.Button, mods, [className, styles[variant]])}
+            disabled={disabled}
             {...restProps}
         >
             {children}

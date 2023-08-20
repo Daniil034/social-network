@@ -4,5 +4,7 @@
   "Reload error button": "Reload",
   "Login": "Login",
   "Type your username": "Username",
-  "Type your password": "Password"
+  "Type your password": "Password",
+  "Форма авторизации": "Authorization form",
+  "Произошла непредвиденная ошибка": "Something went wrong"
 }

@@ -1,17 +1,17 @@
 import React, {
-    InputHTMLAttributes, useEffect, useRef, useState,
+    InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import styles from './Input.module.scss';
 
-type Props = {
+interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'> {
     className?: string,
     value?: string,
     onChange?: (value: string) => void,
     autoFocus?: boolean,
-} & InputHTMLAttributes<HTMLInputElement>;
+}
 
-export function Input(props: Props) {
+export const Input = memo((props: Props) => {
     const {
         className,
         onChange,
@@ -73,4 +73,4 @@ export function Input(props: Props) {
             </div>
         </div>
     );
-}
+});
