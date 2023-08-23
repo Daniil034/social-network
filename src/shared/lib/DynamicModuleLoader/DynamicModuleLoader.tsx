@@ -1,6 +1,6 @@
 import { ReactNode, Suspense, useEffect } from 'react';
 import { useStore } from 'react-redux';
-import { StoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider';
+import { StateSchemaKey, StoreWithManager } from 'app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
 import { Loader } from 'shared/ui/Loader/Loader';
 
@@ -34,7 +34,7 @@ export function DynamicModuleLoader(props: Props) {
                 });
             }
         };
-    }, [reducers, removeAfterUnmount]);
+    }, [reducers, removeAfterUnmount, store.reducerManager]);
 
     return (
         <Suspense fallback={<Loader />}>
