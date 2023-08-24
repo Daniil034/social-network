@@ -33,34 +33,24 @@ export function Navbar({ className }: Props) {
     if (authData) {
         return (
             <div className={classNames(styles.navbar, {}, [className])}>
-                <div className={styles.links}>
-                    <AppLink to="/" theme="secondary">{t('main page link')}</AppLink>
-                    <AppLink to="/about" theme="secondary">{t('about page link')}</AppLink>
-                    {/* <ErrorButton /> */}
-                    <Button
-                        variant="clearInverted"
-                        onClick={handleLogout}
-                    >
-                        {t('Logout')}
-                    </Button>
-                </div>
+                <Button
+                    variant="clearInverted"
+                    onClick={handleLogout}
+                >
+                    {t('Logout')}
+                </Button>
             </div>
         );
     }
 
     return (
         <div className={classNames(styles.navbar, {}, [className])}>
-            <div className={styles.links}>
-                <AppLink to="/" theme="secondary">{t('main page link')}</AppLink>
-                <AppLink to="/about" theme="secondary">{t('about page link')}</AppLink>
-                {/* <ErrorButton /> */}
-                <Button
-                    variant="clearInverted"
-                    onClick={handleOpenModal}
-                >
-                    {t('Login')}
-                </Button>
-            </div>
+            <Button
+                variant="clearInverted"
+                onClick={handleOpenModal}
+            >
+                {t('Login')}
+            </Button>
             <LoginModal isOpen={isAuthModalVisible} onClose={handleCloseModal} />
         </div>
     );

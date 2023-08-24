@@ -7,7 +7,6 @@ type ButtonVariants = 'clear' | 'clearInverted' | 'normal' | 'outlined'
 type ButtonProps = {
     className?: string,
     variant?: ButtonVariants,
-    // disabled?: boolean,
     children: ReactNode
 } & ComponentProps<'button'>;
 

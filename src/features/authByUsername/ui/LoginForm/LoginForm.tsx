@@ -3,11 +3,8 @@ import { Button } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useAppDispatch, useAppSelector } from 'shared/lib/hooks/reduxHooks';
-import React, { useCallback, useEffect, useReducer } from 'react';
+import React, { useCallback, useReducer } from 'react';
 import { Text } from 'shared/ui/Text/Text';
-import { selectUserAuthData } from 'entities/User';
-import { useStore } from 'react-redux';
-import { StoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader/DynamicModuleLoader';
 import { loginByUsername } from '../../model/services/loginByUsername';
 import styles from './LoginForm.module.scss';
@@ -33,7 +30,6 @@ export default function LoginForm(props: LoginFormProps) {
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const loginState = useAppSelector(selectLoginState);
-    const authData = useAppSelector(selectUserAuthData);
     const [formState, setFormState] = useReducer(
         (oldValue: FormSchema, newValue: Partial<FormSchema>) => ({ ...oldValue, ...newValue }),
         {
@@ -50,11 +46,11 @@ export default function LoginForm(props: LoginFormProps) {
     }, []);
 
     const handleLoginClick = useCallback(async () => {
-        await dispatch(loginByUsername(formState));
-        if (authData && onLoginSuccess) {
+        const result = await dispatch(loginByUsername(formState));
+        if (result.meta.requestStatus === 'fulfilled' && onLoginSuccess) {
             onLoginSuccess();
         }
-    }, [formState, dispatch, onLoginSuccess, authData]);
+    }, [formState, dispatch, onLoginSuccess]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

@@ -18,13 +18,11 @@ export function App() {
 
     return (
         <div className={classNames('App', {}, [theme])}>
-            {/* <BrowserRouter> */}
             <Navbar />
             <div className="content-page">
                 <Sidebar />
                 <AppRouter />
             </div>
-            {/* </BrowserRouter> */}
         </div>
     );
 }

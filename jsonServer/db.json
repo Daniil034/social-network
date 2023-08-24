@@ -26,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Frodo",
+    "lastname": "Baggins",
+    "age": 59,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://www.giantbomb.com/a/uploads/square_medium/0/6843/493441-frodo2.jpg"
   }
 }

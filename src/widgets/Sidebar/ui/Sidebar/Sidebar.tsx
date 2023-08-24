@@ -4,7 +4,10 @@ import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { LanguageSwitcher } from 'features/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { sidebarItemsList } from 'widgets/Sidebar/model/items';
 import styles from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 type Props = {
     className?: string,
@@ -25,14 +28,23 @@ export function Sidebar(props: Props) {
             className={classNames(styles.Sidebar, { [styles.collapsed]: isCollapsed }, [className])}
             data-testid="sidebar-test"
         >
-            <Button>TEST</Button>
-            <button
+            <div className={styles.links}>
+                {sidebarItemsList.map((sidebarItem) => (
+                    <SidebarItem
+                        key={sidebarItem.path}
+                        item={sidebarItem}
+                        collapsed={isCollapsed}
+                    />
+                ))}
+            </div>
+            <Button
                 data-testid="sidebar-test-toggle"
-                type="button"
                 onClick={handleCollapseSidebar}
+                className={styles.collapseBtn}
+                variant="clearInverted"
             >
-                {t('toggle sidebar button')}
-            </button>
+                {isCollapsed ? '>' : '<'}
+            </Button>
             <div className={classNames(styles.switchers)}>
                 <ThemeSwitcher />
                 <LanguageSwitcher />
